@@ -101,7 +101,6 @@
     .cart-bottom {
         flex-direction: column-reverse;
     }
-
     .cart-promocode {
         justify-content: start;
     }
