@@ -5,7 +5,7 @@ import { StoreContext } from '../../Context/StoreContext';
 
 const Cart = () => {
 
-  const { cartItems, food_list, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
+  const {cartItems,food_list,removeFromCart,getTotalCartAmount} = useContext(StoreContext);
 
   return (
     <div className='cart'>
@@ -21,15 +21,15 @@ const Cart = () => {
         <br />
         <hr />
         {food_list.map((item,index) => {
-          if (cartItems[item._id] > 0) {
+          if(cartItems[item._id]>0) {
             return (
               <div>
-                <div className='cart-items- title cart-items-item'>
+                <div className='cart-items-title cart-items-item'>
                   <img src={item.image} alt="" />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   <p>{cartItems[item._id]}</p>
-                  <p>${item.price * cartItems[item._id]}</p>
+                  <p>${item.price*cartItems[item._id]}</p>
                   <p onClick={() => removeFromCart(item._id)} className='cross'>X</p>
                 </div>
                 <hr />
@@ -44,7 +44,7 @@ const Cart = () => {
           <div>
             <div className="cart-total-details">
               <p>Subtotal</p>
-              <p>${getTotalCartAmount()}</p>
+              <p>{getTotalCartAmount()}</p>
             </div>
             <hr />
             <div className="cart-total-details">
@@ -54,9 +54,12 @@ const Cart = () => {
             <hr />
             <div className="cart-total-details">
               <b>Total</b>
-              <b>${getTotalCartAmount() + 2}</b>
+              <b>${getTotalCartAmount()+2}</b>
             </div>
+            <br />
             <button>PROCEED TO CHECKOUT</button>
+            
+          </div>
           </div>
           <div className="cart-promocode">
             <div>
@@ -66,11 +69,10 @@ const Cart = () => {
                 <button>Submit</button>
               </div>
             </div>
-          </div>
         </div>
       </div>
-    </div>
+     </div>
   )
 }
 
-export default Cart
+export default Cart;
