@@ -28,7 +28,7 @@ const Footer = () => {
                 <h2>GET IN TOUCH</h2>
                 <ul>
                     <li>+91 7458964852</li>
-                    <li>abhisheklulli@gmail.com</li>
+                    <li>abhishek9978@gmail.com</li>
 
                 </ul>
 
